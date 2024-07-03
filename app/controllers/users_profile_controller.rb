@@ -4,7 +4,7 @@ class UsersProfileController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
   end
   def new
     @user = User.new
@@ -41,6 +41,6 @@ class UsersProfileController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :phone_number, :birth_date, :address, :avatar)
   end
 end
